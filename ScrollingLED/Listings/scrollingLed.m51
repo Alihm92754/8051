@@ -1,0 +1,114 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    06/15/2024  16:52:56  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+D:\C51\BIN\BL51.EXE .\Objects\scrollingled.obj TO .\Objects\scrollingLed PRINT (.\Listings\scrollingLed.m51) RAMSIZE (25
+>> 6)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\scrollingled.obj (SCROLLINGLED)
+  D:\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\scrollingLed (SCROLLINGLED)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         ?DT?SCROLLINGLED
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0025H     UNIT         ?PR?RIGHT?SCROLLINGLED
+            CODE    0825H     0025H     UNIT         ?PR?LEFT?SCROLLINGLED
+            CODE    084AH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0856H     0006H     UNIT         ?PR?MAIN?SCROLLINGLED
+            CODE    085CH     0001H     UNIT         ?PR?DELAY?SCROLLINGLED
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\scrollingLed (SCROLLINGLED)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?SCROLLINGLED
+
+?PR?MAIN?SCROLLINGLED
+  +--> ?PR?LEFT?SCROLLINGLED
+  +--> ?PR?RIGHT?SCROLLINGLED
+
+?PR?LEFT?SCROLLINGLED
+  +--> ?PR?DELAY?SCROLLINGLED
+
+?PR?RIGHT?SCROLLINGLED
+  +--> ?PR?DELAY?SCROLLINGLED
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\scrollingLed (SCROLLINGLED)
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  06/15/2024  16:52:56  PAGE 2
+
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        SCROLLINGLED
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:085CH         PUBLIC        delay
+  C:0800H         PUBLIC        right
+  C:0856H         PUBLIC        main
+  C:0825H         PUBLIC        left
+  D:0008H         PUBLIC        j
+  -------         PROC          RIGHT
+  C:0800H         LINE#         7
+  C:0800H         LINE#         8
+  C:0800H         LINE#         9
+  C:0811H         LINE#         10
+  C:0811H         LINE#         11
+  C:0814H         LINE#         12
+  C:0817H         LINE#         13
+  C:0824H         LINE#         14
+  -------         ENDPROC       RIGHT
+  -------         PROC          LEFT
+  C:0825H         LINE#         15
+  C:0825H         LINE#         16
+  C:0825H         LINE#         17
+  C:0836H         LINE#         18
+  C:0836H         LINE#         19
+  C:0839H         LINE#         20
+  C:083CH         LINE#         21
+  C:0849H         LINE#         22
+  -------         ENDPROC       LEFT
+  -------         PROC          DELAY
+  C:085CH         LINE#         23
+  C:085CH         LINE#         24
+  C:085CH         LINE#         25
+  -------         ENDPROC       DELAY
+  -------         PROC          MAIN
+  C:0856H         LINE#         26
+  C:0856H         LINE#         27
+  C:0856H         LINE#         28
+  C:0859H         LINE#         29
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        SCROLLINGLED
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0051H BYTE ( 3%) *
+******************************************************************************
+
+Program Size: data=11.0 xdata=0 code=96
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

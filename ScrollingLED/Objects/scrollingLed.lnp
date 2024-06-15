@@ -1,0 +1,3 @@
+".\Objects\scrollingled.obj" 
+TO ".\Objects\scrollingLed" 
+PRINT(".\Listings\scrollingLed.m51") RAMSIZE(256) 

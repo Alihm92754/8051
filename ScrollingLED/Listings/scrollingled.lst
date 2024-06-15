@@ -1,0 +1,54 @@
+C51 COMPILER V9.60.7.0   SCROLLINGLED                                                      06/15/2024 16:52:39 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE SCROLLINGLED
+OBJECT MODULE PLACED IN .\Objects\scrollingled.obj
+COMPILER INVOKED BY: D:\C51\BIN\C51.EXE scrollingled.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\scro
+                    -llingled.lst) TABS(2) OBJECT(.\Objects\scrollingled.obj)
+
+line level    source
+
+   1           #include<reg51.h>
+   2           #define LED P2
+   3           void delay(void);
+   4           void left(void);
+   5           void right(void);
+   6           unsigned int j;
+   7           void right()
+   8           {
+   9   1       for (j=0x80; j>=0x01; j>>=1)
+  10   1       {
+  11   2       LED = j;
+  12   2       delay();
+  13   2       }
+  14   1       }
+  15           void left()
+  16           {
+  17   1       for (j=0x01; j<=0x80; j<<=1)
+  18   1       {
+  19   2       LED = j;
+  20   2       delay();
+  21   2       }
+  22   1       }
+  23           void delay(void)
+  24           {
+  25   1       }
+  26           void main()
+  27           {
+  28   1       left();
+  29   1       right();
+  30   1       }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     81    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
